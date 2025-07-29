@@ -1,4 +1,4 @@
-import { getLista, limpaLista } from "./lista.js";
+import { adicionaNaLista, getLista, limpaLista, removeDaLista } from "./lista.js";
 
 const olItens = document.querySelector("#itens");
 const pEntrada = document.querySelector("#entrada");
@@ -22,4 +22,15 @@ btnLimpar.addEventListener("click", limparItensDeLista);
 function limparItensDeLista() {
     limpaLista();
     atualizarLista();
+}
+
+btnAdicionar.addEventListener("click", addItensDeLista);
+
+function addItensDeLista(){
+    const texto = pEntrada.textContent.trim();
+    if (texto) {
+        adicionaNaLista(texto);
+        atualizarLista();
+        pEntrada.textContent = ""; // Limpa o campo após adicionar
+    }
 }
