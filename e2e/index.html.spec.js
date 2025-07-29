@@ -107,9 +107,9 @@ test.describe("index.html", () => {
     const b1 = await page.locator("main > section> #adicionar");
     await p.selectText();
     await page.fill("main > section> p", "Test Item");
-    expect(p).toHaveText("Test Item")
+    expect(p).toHaveText("Test Item");
     await page.click("main > section> #adicionar");
-    expect(p).toHaveText("")
+    expect(p).toHaveText("");
     const itensDaLista = await page.locator("#itens > li");
     await expect(itensDaLista).toHaveCount(4);
     await expect(page.locator("#itens > li:nth-child(4)")).toHaveText('Test Item');
